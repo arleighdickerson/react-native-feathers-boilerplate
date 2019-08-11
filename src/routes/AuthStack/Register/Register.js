@@ -11,12 +11,13 @@ import StatusBar from '../../../components/StatusBar';
 
 // styles
 import styles from './styles';
+import ToastExample from '../../../ToastExample';
 
 class Register extends Component {
   static propTypes = {
     createUser: PropTypes.func.isRequired,
     form:       PropTypes.instanceOf(Map).isRequired,
-  }
+  };
 
   handleSubmit = () => {
     const { createUser, form } = this.props;
@@ -27,7 +28,7 @@ class Register extends Component {
     if (!registerForm.get('syncErrors')) {
       createUser(values.toJS());
     }
-  }
+  };
 
   renderErrorMessage = () => {
     const { form } = this.props;
@@ -41,6 +42,11 @@ class Register extends Component {
     }
 
     return element;
+  };
+
+  componentDidMount(): void {
+    console.log('didMount');
+    ToastExample.show('hello!!!',ToastExample.LONG);
   }
 
   render() {
@@ -55,14 +61,14 @@ class Register extends Component {
     }
 
     return (
-      <View style={ styles.screenContainer }>
-        <StatusBar />
-        <RegisterForm />
+      <View style={styles.screenContainer}>
+        <StatusBar/>
+        <RegisterForm/>
 
         <Button title='Create Account'
-          disabled={ disableButton }
-          loading={ Boolean(registerForm.get('submitting')) }
-          onPress={ this.handleSubmit } />
+                disabled={disableButton}
+                loading={Boolean(registerForm.get('submitting'))}
+                onPress={this.handleSubmit}/>
 
         {this.renderErrorMessage()}
       </View>
