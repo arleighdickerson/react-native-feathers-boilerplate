@@ -11,12 +11,7 @@ import Splash from './components/Splash';
 
 import { sessionVerify } from './actions/sessionActions';
 
-import * as Watcher from './util/Watcher';
-
-(async () => {
-  const files = await Watcher.showFiles();
-  console.log(files);
-})();
+import runScratch from './scratch';
 
 const { Navigator, ...nav } = createNavigator();
 
@@ -42,7 +37,10 @@ const ready = new Promise((resolve, reject) => persistStore(
   err => (err ? reject(err) : resolve(true)),
 ));
 
-const afterLift = () => store.dispatch(sessionVerify());
+const afterLift = () => {
+  store.dispatch(sessionVerify());
+  runScratch();
+};
 
 export default () => (
   <Provider store={store}>
