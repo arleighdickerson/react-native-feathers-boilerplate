@@ -47,17 +47,17 @@ public class UsbDevicesModule extends ReactContextBaseJavaModule {
       WritableMap deviceParams = Arguments.createMap();
 
       deviceParams.putString("deviceName", device.getDeviceName());
-      /*
-      map.putString("manufacturerName", device.getManufacturerName());
-      map.putString("productName", device.getProductName());
-      map.putString("version", device.getVersion());
-      map.putString("serialNumber", device.getSerialNumber());
-      map.putString("deviceId", device.getDeviceId());
-      map.putString("vendorId", device.getVendorId());
-      map.putString("productId", device.getProductId());
-      map.putString("deviceSubclass", device.getDeviceSubclass());
-      map.putString("deviceProtocol", device.getDeviceProtocol());
-      */
+
+      deviceParams.putString("manufacturerName", device.getManufacturerName());
+      deviceParams.putString("productName", device.getProductName());
+      deviceParams.putString("version", device.getVersion());
+      deviceParams.putString("serialNumber", device.getSerialNumber());
+
+      deviceParams.putInt("deviceId", device.getDeviceId());
+      deviceParams.putInt("vendorId", device.getVendorId());
+      deviceParams.putInt("productId", device.getProductId());
+      deviceParams.putInt("deviceSubclass", device.getDeviceSubclass());
+      deviceParams.putInt("deviceProtocol", device.getDeviceProtocol());
 
       map.putMap(name, deviceParams);
 

@@ -19,15 +19,8 @@ async function usbDevicesExample() {
   ToastExample.show(JSON.stringify(deviceList), ToastExample.LONG);
 }
 
-const examples = [
-  watcherExample,
-  usbDevicesExample,
-];
-
 export const runScratch = async () => {
-  for (let i = 0; i < examples.length; i += 1) {
-    await examples[i]();
-  }
+  await usbDevicesExample();
 };
 
 const noOp = async () => {};

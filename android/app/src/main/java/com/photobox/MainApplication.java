@@ -26,10 +26,10 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
+            new VectorIconsPackage(),
         new CustomToastPackage(),
         new WatcherPackage(),
-        new UsbDevicesPackage(),
-            new VectorIconsPackage()
+        new UsbDevicesPackage()
       );
     }
     // @formatter:on
