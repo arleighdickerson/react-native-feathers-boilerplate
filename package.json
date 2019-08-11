@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
     "@feathersjs/authentication-client": "^1.0.4",
     "@feathersjs/feathers": "^3.2.1",
     "@feathersjs/rest-client": "^1.4.3",
@@ -34,11 +35,6 @@
     "validate.js": "^0.12.0"
   },
   "devDependencies": {
-    "@babel/runtime": "^7.4.5",
-    "@types/jest": "24.0.17",
-    "@types/react": "^16.8.19",
-    "@types/react-native": "^0.57.60",
-    "@types/react-test-renderer": "^16.8.1",
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.54.1",
