@@ -1,4 +1,4 @@
-package com.photobox;
+package com.photobox.toast;
 
 import android.widget.Toast;
 import com.facebook.react.bridge.ReactApplicationContext;

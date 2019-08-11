@@ -1,4 +1,4 @@
-package com.photobox;
+package com.photobox.toast;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;

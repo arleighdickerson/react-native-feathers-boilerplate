@@ -1,6 +1,7 @@
 import { Map } from 'immutable';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { DeviceEventEmitter } from 'react-native';
 
 // components
 import { View } from 'react-native';
@@ -11,7 +12,8 @@ import StatusBar from '../../../components/StatusBar';
 
 // styles
 import styles from './styles';
-import ToastExample from '../../../ToastExample';
+import ToastExample from '../../../util/ToastExample';
+import * as Watcher from '../../../util/Watcher';
 
 class Register extends Component {
   static propTypes = {
@@ -44,10 +46,20 @@ class Register extends Component {
     return element;
   };
 
+  componentWillMount(): void {
+    console.log('willMount');
+    Watcher.addListener(this.handleWatcherEvent);
+  }
+
   componentDidMount(): void {
     console.log('didMount');
-    ToastExample.show('hello!!!',ToastExample.LONG);
+    Watcher.emit();
   }
+
+  handleWatcherEvent = (evt) => {
+    console.log('received watcher event');
+    ToastExample.show(evt.files.join(', '), ToastExample.LONG);
+  };
 
   render() {
     const { form } = this.props;
