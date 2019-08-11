@@ -8,6 +8,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.photobox.toast.CustomToastPackage;
+import com.photobox.usbdevices.UsbDevicesPackage;
 import com.photobox.watcher.WatcherPackage;
 import java.util.Arrays;
 import java.util.List;
@@ -21,14 +22,17 @@ public class MainApplication extends Application implements ReactApplication {
     }
 
     @Override
+    // @formatter:off
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
-            new VectorIconsPackage(),
         new CustomToastPackage(),
-        new WatcherPackage()
+        new WatcherPackage(),
+        new UsbDevicesPackage(),
+            new VectorIconsPackage()
       );
     }
+    // @formatter:on
 
     @Override
     protected String getJSMainModuleName() {
