@@ -1,4 +1,4 @@
-package com.photobox.usbdevices;
+package com.photobox.usb;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;

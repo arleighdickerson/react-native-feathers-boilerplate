@@ -8,7 +8,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.photobox.toast.CustomToastPackage;
-import com.photobox.usbdevices.UsbDevicesPackage;
+import com.photobox.usb.UsbDevicesPackage;
 import com.photobox.watcher.WatcherPackage;
 import java.util.Arrays;
 import java.util.List;
